@@ -1,12 +1,11 @@
 import math
 
 print()
-#EnvironmentVariables
+#Environment Variables
 annualConsuption = 12000
 averageLight = 5 #horas
 panelEffiency = 0.15
 panelSurface = 1.6
-#averageRadiation = averageLight / panelSurface / 1
 averageRadiation = 5
 
 #Daily Power
@@ -28,25 +27,29 @@ print("Extra")
 print()
 
 newAnnualConsuption = float(input("Ingresa Consumo Anual: "))
-#-------------------------------
+#--------------------------------------------------------------
 newPanelEfficiency = float(input("Ingresa Eficiencia del Panel %: "))
-#-------------------------------
+#--------------------------------------------------------------
 newPanelSurface = float(input("Ingresa Superficie Promedio del Panel: "))
-#-------------------------------
+#--------------------------------------------------------------
 newAverageRadiation = float(input("Ingresa Radiación Solar Promedio: "))
-#-------------------------------
+#--------------------------------------------------------------
 newAverageLight = float(input("Ingresa Horas Promedio de Sol / Día: "))
 
 print()
 
 newDailyPower = (newPanelSurface) * (newAverageRadiation) * (newPanelEfficiency / 100)
-print(f"Potencia Diaria: {newDailyPower}")
+print(f"Potencia Diaria: {newDailyPower} Kwh")
 
 newAnnualPower = newDailyPower * 365
-print(f"Potencia Anual: {newAnnualPower}")
+print(f"Potencia Anual: {newAnnualPower} Kwh")
 
 newNumberOfPanels = newAnnualConsuption / newAnnualPower
-print(f"Número de Paneles: {newNumberOfPanels}")
+aproxVar = math.ceil(newNumberOfPanels)
+print(f"Número de Paneles: {aproxVar}")
+
+totalArea = (newPanelSurface * newNumberOfPanels)
+print(f"El área necesaria para instalar {aproxVar} es de: {round(totalArea, 2)} Mts Cuadrados.")
 
 
 
