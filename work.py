@@ -29,7 +29,7 @@ print()
 
 newAnnualConsuption = float(input("Ingresa Consumo Anual: "))
 #-------------------------------
-newPanelEfficiency = float(input("Ingresa Eficiencia del Panel: "))
+newPanelEfficiency = float(input("Ingresa Eficiencia del Panel %: "))
 #-------------------------------
 newPanelSurface = float(input("Ingresa Superficie Promedio del Panel: "))
 #-------------------------------
@@ -38,6 +38,17 @@ newAverageRadiation = float(input("Ingresa Radiación Solar Promedio: "))
 newAverageLight = float(input("Ingresa Horas Promedio de Sol / Día: "))
 
 print()
+
+newDailyPower = (newPanelSurface) * (newAverageRadiation) * (newPanelEfficiency / 100)
+print(f"Potencia Diaria: {newDailyPower}")
+
+newAnnualPower = newDailyPower * 365
+print(f"Potencia Anual: {newAnnualPower}")
+
+newNumberOfPanels = newAnnualConsuption / newAnnualPower
+print(f"Número de Paneles: {newNumberOfPanels}")
+
+
 
 
 
