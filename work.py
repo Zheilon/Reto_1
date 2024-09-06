@@ -50,18 +50,3 @@ print(f"Número de Paneles: {aproxVar}")
 
 totalArea = (newPanelSurface * newNumberOfPanels)
 print(f"El área necesaria para instalar {aproxVar} es de: {round(totalArea, 2)} Mts Cuadrados.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
